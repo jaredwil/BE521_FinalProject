@@ -121,7 +121,6 @@ save('sub1_weights.mat','Weights');
 %glove data must be alterted to acount for time shift
 data_glove = train_dg(101:length(train_dg)-50,:);
 
-
 u = r*(Weights);    %predicted dataglove data
 x = length(train);  
 ttt = (1:x)*(50/1000);
