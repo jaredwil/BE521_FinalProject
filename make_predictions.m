@@ -1,4 +1,4 @@
-% function [predicted_dg] = make_predictions(test_ecog)
+% function [predicted_dg ] = make_predictions(test_ecog)
 %
 % Inputs: test_ecog - 3 x 1 cell array containing ECoG for each subject, where test_ecog{i} 
 % to the ECoG for subject i. Each cell element contains a N x M testing ECoG,
