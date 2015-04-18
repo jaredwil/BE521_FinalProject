@@ -2,6 +2,7 @@
 clear all;
 close all;
 clc;
+addpath(genpath('ieeg-matlab-1.8.3'))
 
 
 id{1}.train_E = 'I521_A0009_D001';
@@ -26,4 +27,4 @@ train_data = session.data.getvalues(1:samples,1:channels);
 %so this does not have to be done again. 
 
 
-% save 'train_data.mat'
+save 'train_data.mat'

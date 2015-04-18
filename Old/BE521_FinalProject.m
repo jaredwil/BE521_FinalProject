@@ -43,7 +43,7 @@ load('C:\Users\Jared\Desktop\FinalProject\data\be521_sub1_testLabels.mat');
 F = [];
 for i = 1:channels
 % % % % % % [S,F,T,P]=spectrogram(train_data(:,i),window,overlap,range,fs)
-% % % % % % % spectrogram(train_data(:,1),window,overlap,range,fs);
+% % % % % % spectrogram(train_data(:,1),window,overlap,range,fs);
 % % % % % % %compute the F.T. for small windows (100 ms) and find the frequencies
 % % % % % % %contained in those "windows" using the PSD (power spectral desnsity) P.
 % % % % % % 
@@ -116,15 +116,15 @@ Weights = mldivide((r'*r),(r'*train));
 save('sub1_weights.mat','Weights');
 
 %%%%%%%%%%%%%%%%%%%CHECK DIZ WIF SUM HAND DATA%%%%%%%%%%%%%%%%
-
 %because of lost sample at end and 100 ms offset from beggining the data
 %glove data must be alterted to acount for time shift
 data_glove = train_dg(101:length(train_dg)-50,:);
 
 u = r*(Weights);    %predicted dataglove data
 x = length(train);  
-ttt = (1:x)*(50/1000);
 
+
+ttt = (1:x)*(50/1000);
 tt = (1:length(data_glove))*(1/1000);
 
 for i = 1:5
