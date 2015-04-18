@@ -18,7 +18,7 @@ id{3}.test_E = 'I521_A0011_D003';
 
 
 session = IEEGSession(id{1}.train_E,'jaredwil','jar_ieeglogin.bin');
-% session = IEEGSession(id{1}.train_E,'tblevins','tbl_ieeglogin');
+% session = IEEGSession(id{1}.train_E,'jaredwil','jar_ieeglogin.bin');
 channels = size(session.data.channels,2);
 samples = round((session.data.channels(1).get_tsdetails.getEndTime)/1000);
 train_data = session.data.getvalues(1:samples,1:channels);
