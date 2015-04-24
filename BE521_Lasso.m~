@@ -127,16 +127,16 @@ channels = size(train_data,2);
     
     ttt = (1:size(predlasso,1))*(overlap/1000);
 
-    tt = (1:length(train_dg(:,dig))/2)*(1/1000);
+    tt = (1:length(data_glove(1:split)))*(1/1000);
     
-    predlasso1 = zeros(size(train_dg(:,dig),1)/2,100);
+    predlasso1 = zeros(size(train_dg,1),100);
     
     for i = 1:100
     predlasso1(:,i) = spline(ttt,predlasso(:,i),tt)';
     predlasso1(:,i) = smooth(predlasso1(:,i),20);
     end
     
-    rho = corr(train_dg(1:size(train_dg,1)/2,dig),predlasso1);
+    rho = corr(data_glove(1:split),predlasso1);
     
     figure(1)
     plot(Stats.DF,rho)
